@@ -1,0 +1,62 @@
+spring.application.name=SawadeeAI Hotel Management
+server.port=8080
+
+# Database Configuration
+spring.datasource.url=jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:sawadee_hotel}
+spring.datasource.username=${DB_USER:postgres}
+spring.datasource.password=${DB_PASSWORD:password}
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+# JPA Configuration
+spring.jpa.hibernate.ddl-auto=validate
+spring.jpa.show-sql=false
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+
+# Redis Configuration
+spring.redis.host=${REDIS_HOST:localhost}
+spring.redis.port=${REDIS_PORT:6379}
+spring.redis.timeout=2000ms
+
+# Security Configuration
+spring.security.oauth2.resourceserver.jwt.issuer-uri=${KEYCLOAK_URL:http://localhost:8082}/realms/${KEYCLOAK_REALM:hotel-realm}
+spring.security.oauth2.resourceserver.jwt.jwk-set-uri=${KEYCLOAK_URL:http://localhost:8082}/realms/${KEYCLOAK_REALM:hotel-realm}/protocol/openid-connect/certs
+
+# Keycloak Configuration
+keycloak.realm=${KEYCLOAK_REALM:hotel-realm}
+keycloak.auth-server-url=${KEYCLOAK_URL:http://localhost:8082}
+keycloak.resource=${KEYCLOAK_CLIENT_ID:hotel-client}
+keycloak.credentials.secret=${KEYCLOAK_CLIENT_SECRET:}
+keycloak.use-resource-role-mappings=true
+keycloak.bearer-only=true
+
+# CORS Configuration
+app.cors.allowed-origins=${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:3001}
+
+# Logging
+logging.level.com.sawadeeai=INFO
+logging.level.org.springframework.security=DEBUG
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} - %msg%n
+logging.file.name=logs/application.log
+
+# Actuator
+management.endpoints.web.exposure.include=health,info,metrics,prometheus
+management.endpoint.health.show-details=when-authorized
+management.metrics.export.prometheus.enabled=true
+
+# File Upload
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB
+
+# AI Services URLs
+app.ai.chatbot-url=${AI_CHATBOT_URL:http://localhost:5000}
+app.ai.recommendations-url=${AI_RECOMMENDATIONS_URL:http://localhost:5001}
+
+# Multi-tenancy
+app.multitenancy.enabled=true
+app.multitenancy.default-tenant=default
+
+# API Documentation
+springdoc.api-docs.path=/v3/api-docs
+springdoc.swagger-ui.path=/swagger-ui.html
+springdoc.swagger-ui.operationsSorter=method
