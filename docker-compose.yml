@@ -1,161 +1,146 @@
 version: '3.8'
 
 services:
-  # Redis for caching and sessions
+  # Database
+  postgres:
+    image: postgres:15
+    container_name: sawadee-postgres
+    environment:
+      POSTGRES_DB: sawadee_hotel
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init:/docker-entrypoint-initdb.d
+    networks:
+      - sawadee-network
+
+  # Cache
   redis:
     image: redis:7-alpine
-    container_name: kapadokya-redis
-    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-redis123}
-    volumes:
-      - redis_data:/data
+    container_name: sawadee-redis
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data
     networks:
-      - hotel-network
-    healthcheck:
-      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
-      interval: 10s
-      timeout: 3s
-      retries: 5
-  # Keycloak for authentication
+      - sawadee-network
+
+  # Authentication
   keycloak:
-    image: quay.io/keycloak/keycloak:23.0
-    container_name: kapadokya-keycloak
+    image: quay.io/keycloak/keycloak:22.0
+    container_name: sawadee-keycloak
     environment:
-      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN:-admin}
-      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:-admin123}
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin123
       KC_DB: postgres
-      KC_DB_URL: jdbc:postgresql://host.docker.internal:5432/hotel_booking
+      KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
       KC_DB_USERNAME: postgres
-      KC_DB_PASSWORD: ${DB_PASSWORD:-hotel_pass123}
-      KC_HOSTNAME: localhost
-      KC_HTTP_ENABLED: true
-      KC_HOSTNAME_STRICT_HTTPS: false
-    command: start-dev
+      KC_DB_PASSWORD: password123
     ports:
       - "8082:8080"
+    depends_on:
+      - postgres
+    command: start-dev
     networks:
-      - hotel-network
-    volumes:
-      - keycloak_data:/opt/keycloak/data
-  # Spring Boot Backend
-  spring-backend:
-    build: 
-      context: ./spring-boot-backend
+      - sawladee-network
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
       dockerfile: Dockerfile
-    container_name: kapadokya-backend
+    container_name: sawadee-backend
     environment:
       SPRING_PROFILES_ACTIVE: docker
-      DATABASE_URL: jdbc:postgresql://host.docker.internal:5432/hotel_booking
-      DATABASE_USERNAME: postgres
-      DATABASE_PASSWORD: ${DB_PASSWORD:-hotel_pass123}
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: sawadee_hotel
+      DB_USER: postgres
+      DB_PASSWORD: password123
       REDIS_HOST: redis
-      REDIS_PASSWORD: ${REDIS_PASSWORD:-redis123}
-      KEYCLOAK_AUTH_SERVER_URL: http://keycloak:8080
-      KEYCLOAK_REALM: hotel-realm
-      KEYCLOAK_CLIENT_ID: hotel-client
-      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-sk_test_dummy}      AI_AGENT_URL: http://ai-agent:5050
-      AI_RECOMMEND_URL: http://ai-recommend:5051
-    depends_on:
-      redis:
-        condition: service_healthy
-      keycloak:
-        condition: service_started
+      REDIS_PORT: 6379
+      KEYCLOAK_URL: http://keycloak:8080
     ports:
-      - "8090:8090"
-    networks:
-      - hotel-network
-    volumes:
-      - ./uploads:/app/uploads
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8090/actuator/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
-  # AI Agent
-  ai-agent:
-    build:
-      context: ./ai-agent
-      dockerfile: Dockerfile
-    container_name: kapadokya-ai-agent
-    environment:
-      BACKEND_URL: http://spring-backend:8090
-      REDIS_HOST: redis
-      REDIS_PASSWORD: ${REDIS_PASSWORD:-redis123}
-      GOOGLE_APPLICATION_CREDENTIALS: /app/credentials/google-credentials.json
-      FACEIO_API_KEY: ${FACEIO_API_KEY:-your_faceio_key}    depends_on:
-      spring-backend:
-        condition: service_healthy
-      redis:
-        condition: service_healthy    ports:
-      - "5050:5050"
-    networks:
-      - hotel-network
-    volumes:
-      - ./ai-agent/credentials:/app/credentials
-      - ./uploads:/app/uploads
-
-  # AI Recommendation System
-  ai-recommend:
-    build:
-      context: ./ai-recommend-system
-      dockerfile: Dockerfile
-    container_name: kapadokya-ai-recommend
-    environment:
-      MODEL_PATH: /app/models/
-      BACKEND_URL: http://spring-backend:8090
-      REDIS_HOST: redis
-      REDIS_PASSWORD: ${REDIS_PASSWORD:-redis123}
+      - "8080:8080"
     depends_on:
-      spring-backend:
-        condition: service_healthy    ports:
-      - "5051:5051"
+      - postgres
+      - redis
+      - keycloak
     networks:
-      - hotel-network
-    volumes:
-      - ./ai-recommend-system/models:/app/models
+      - sawadee-network
 
-  # Web Frontend (Landing Page)
-  web-frontend:
+  # AI Chatbot Service
+  ai-chatbot:
     build:
-      context: ./web-frontend
+      context: ./ai-services/chatbot
       dockerfile: Dockerfile
-    container_name: kapadokya-web
+    container_name: sawadee-ai-chatbot
     environment:
-      REACT_APP_API_URL: http://localhost:8090
-      REACT_APP_AI_AGENT_URL: http://localhost:5050
+      FLASK_ENV: production
+      BACKEND_URL: http://backend:8080
+    ports:
+      - "5000:5000"
+    depends_on:
+      - backend
+    networks:
+      - sawadee-network
+
+  # AI Recommendation Service
+  ai-recommendations:
+    build:
+      context: ./ai-services/recommendations
+      dockerfile: Dockerfile
+    container_name: sawadee-ai-recommendations
+    environment:
+      FLASK_ENV: production
+      BACKEND_URL: http://backend:8080
+    ports:
+      - "5001:5001"
+    depends_on:
+      - backend
+    networks:
+      - sawadee-network
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: sawadee-frontend
+    environment:
+      REACT_APP_API_URL: http://localhost:8080
       REACT_APP_KEYCLOAK_URL: http://localhost:8082
-      REACT_APP_KEYCLOAK_REALM: hotel-realm
-      REACT_APP_KEYCLOAK_CLIENT_ID: hotel-client
-    depends_on:
-      - spring-backend
+      REACT_APP_AI_CHATBOT_URL: http://localhost:5000
     ports:
       - "3000:3000"
+    depends_on:
+      - backend
     networks:
-      - hotel-network
+      - sawadee-network
 
-  # Nginx Load Balancer & Static Files
+  # Reverse Proxy
   nginx:
     image: nginx:alpine
-    container_name: kapadokya-nginx
+    container_name: sawadee-nginx
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./nginx/ssl:/etc/nginx/ssl
-      - ./uploads:/var/www/uploads
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx/ssl:/etc/nginx/ssl
     depends_on:
-      - spring-backend
-      - web-frontend
+      - frontend
+      - backend
     networks:
-      - hotel-network
+      - sawadee-network
 
 volumes:
+  postgres_data:
   redis_data:
-  keycloak_data:
 
 networks:
-  hotel-network:
+  sawadee-network:
     driver: bridge
