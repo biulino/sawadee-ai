@@ -1,0 +1,855 @@
+[
+  {
+    "id": 1,
+    "name": "Ahmet Yılmaz",
+    "email": "ahmet.yilmaz@example.com",
+    "age": 28,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1000,
+      "max": 1300
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "WiFi",
+      "Minibar"
+    ],
+    "specialRequests": "Sigara içilmeyen oda",
+    "travelDates": {
+      "start": "2023-11-01",
+      "end": "2023-11-05"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Zeynep Kaya",
+    "email": "zeynep.kaya@example.com",
+    "age": 35,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1400,
+      "max": 1700
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 3,
+    "preferredAmenities": [
+      "TV",
+      "Balkon"
+    ],
+    "specialRequests": "Manzaralı oda",
+    "travelDates": {
+      "start": "2023-12-10",
+      "end": "2023-12-15"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Mehmet Demir",
+    "email": "mehmet.demir@example.com",
+    "age": 45,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1100,
+      "max": 1500
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 1,
+    "preferredAmenities": [
+      "WiFi",
+      "TV"
+    ],
+    "specialRequests": "Üst katlarda oda",
+    "travelDates": {
+      "start": "2023-10-20",
+      "end": "2023-10-25"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Elif Şahin",
+    "email": "elif.sahin@example.com",
+    "age": 29,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1200,
+      "max": 1600
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "Balkon",
+      "Minibar"
+    ],
+    "specialRequests": "Kahvaltı dahil",
+    "travelDates": {
+      "start": "2023-11-15",
+      "end": "2023-11-20"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Can Aydın",
+    "email": "can.aydin@example.com",
+    "age": 50,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1300,
+      "max": 1700
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 3,
+    "preferredAmenities": [
+      "WiFi",
+      "TV",
+      "Minibar"
+    ],
+    "specialRequests": "Aile odası",
+    "travelDates": {
+      "start": "2023-12-01",
+      "end": "2023-12-07"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Selin Öztürk",
+    "email": "selin.ozturk@example.com",
+    "age": 33,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1500,
+      "max": 2000
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "Balkon",
+      "TV"
+    ],
+    "specialRequests": "Romantik dekorasyon",
+    "travelDates": {
+      "start": "2024-01-05",
+      "end": "2024-01-10"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Süleyman Tekin",
+    "email": "süleyman.tekin@example.com",
+    "age": 59,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1407,
+      "max": 1724
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 4,
+    "preferredAmenities": [
+      "TV",
+      "Minibar",
+      "Balkon"
+    ],
+    "specialRequests": "Jakuzili oda",
+    "travelDates": {
+      "start": "2023-12-01",
+      "end": "2023-12-07"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Ali Kaplan",
+    "email": "ali.kaplan@example.com",
+    "age": 59,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1567,
+      "max": 1886
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 4,
+    "preferredAmenities": [
+      "WiFi",
+      "TV"
+    ],
+    "specialRequests": "Aile odası",
+    "travelDates": {
+      "start": "2023-12-10",
+      "end": "2023-12-15"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Murat Şahin",
+    "email": "murat.şahin@example.com",
+    "age": 40,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1114,
+      "max": 1601
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "WiFi",
+      "Minibar",
+      "Balkon"
+    ],
+    "specialRequests": "Havuz manzaralı",
+    "travelDates": {
+      "start": "2023-11-01",
+      "end": "2023-11-05"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Ebru Aydın",
+    "email": "ebru.aydın@example.com",
+    "age": 25,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 858,
+      "max": 1374
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 3,
+    "preferredAmenities": [
+      "WiFi",
+      "Minibar"
+    ],
+    "specialRequests": "Erken check-in",
+    "travelDates": {
+      "start": "2023-11-01",
+      "end": "2023-11-05"
+    }
+  },
+  {
+    "id": 11,
+    "name": "Sevim Aktaş",
+    "email": "sevim.aktaş@example.com",
+    "age": 60,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1008,
+      "max": 1640
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 1,
+    "preferredAmenities": [
+      "TV",
+      "WiFi"
+    ],
+    "specialRequests": "Sessiz bölgede",
+    "travelDates": {
+      "start": "2023-10-20",
+      "end": "2023-10-25"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Meryem Tekin",
+    "email": "meryem.tekin@example.com",
+    "age": 25,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1233,
+      "max": 1781
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "Minibar",
+      "TV",
+      "Balkon",
+      "WiFi"
+    ],
+    "specialRequests": "Oda servisi",
+    "travelDates": {
+      "start": "2023-10-20",
+      "end": "2023-10-25"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Zehra Kaplan",
+    "email": "zehra.kaplan@example.com",
+    "age": 35,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1143,
+      "max": 1464
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 1,
+    "preferredAmenities": [
+      "Balkon"
+    ],
+    "specialRequests": "Manzaralı oda",
+    "travelDates": {
+      "start": "2023-12-01",
+      "end": "2023-12-07"
+    }
+  },
+  {
+    "id": 14,
+    "name": "Aysel Şimşek",
+    "email": "aysel.şimşek@example.com",
+    "age": 37,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1405,
+      "max": 1903
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "TV",
+      "WiFi"
+    ],
+    "specialRequests": "Sessiz bölgede",
+    "travelDates": {
+      "start": "2023-12-01",
+      "end": "2023-12-07"
+    }
+  },
+  {
+    "id": 15,
+    "name": "Fatma Özkan",
+    "email": "fatma.özkan@example.com",
+    "age": 47,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 888,
+      "max": 1292
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 1,
+    "preferredAmenities": [
+      "TV",
+      "WiFi"
+    ],
+    "specialRequests": "Romantik dekorasyon",
+    "travelDates": {
+      "start": "2023-11-01",
+      "end": "2023-11-05"
+    }
+  },
+  {
+    "id": 16,
+    "name": "Dilek Aydın",
+    "email": "dilek.aydın@example.com",
+    "age": 39,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1301,
+      "max": 1928
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 4,
+    "preferredAmenities": [
+      "Balkon",
+      "WiFi",
+      "Minibar",
+      "TV"
+    ],
+    "specialRequests": "Oda servisi",
+    "travelDates": {
+      "start": "2023-12-01",
+      "end": "2023-12-07"
+    }
+  },
+  {
+    "id": 17,
+    "name": "İbrahim Özkan",
+    "email": "i̇brahim.özkan@example.com",
+    "age": 57,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1212,
+      "max": 1856
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 1,
+    "preferredAmenities": [
+      "Balkon",
+      "WiFi"
+    ],
+    "specialRequests": "Manzaralı oda",
+    "travelDates": {
+      "start": "2023-10-20",
+      "end": "2023-10-25"
+    }
+  },
+  {
+    "id": 18,
+    "name": "Aysel Aktaş",
+    "email": "aysel.aktaş@example.com",
+    "age": 45,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1413,
+      "max": 1785
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "WiFi",
+      "TV"
+    ],
+    "specialRequests": "Üst katlarda oda",
+    "travelDates": {
+      "start": "2023-12-10",
+      "end": "2023-12-15"
+    }
+  },
+  {
+    "id": 19,
+    "name": "Hasan Alp",
+    "email": "hasan.alp@example.com",
+    "age": 43,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1454,
+      "max": 1882
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 3,
+    "preferredAmenities": [
+      "Balkon",
+      "WiFi"
+    ],
+    "specialRequests": "Üst katlarda oda",
+    "travelDates": {
+      "start": "2024-01-05",
+      "end": "2024-01-10"
+    }
+  },
+  {
+    "id": 20,
+    "name": "Hüseyin Öztürk",
+    "email": "hüseyin.öztürk@example.com",
+    "age": 50,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1023,
+      "max": 1432
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "Minibar"
+    ],
+    "specialRequests": "Erken check-in",
+    "travelDates": {
+      "start": "2023-10-20",
+      "end": "2023-10-25"
+    }
+  },
+  {
+    "id": 21,
+    "name": "Esra Şahin",
+    "email": "esra.şahin@example.com",
+    "age": 52,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 827,
+      "max": 1426
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "Balkon"
+    ],
+    "specialRequests": "Geç check-out",
+    "travelDates": {
+      "start": "2023-11-01",
+      "end": "2023-11-05"
+    }
+  },
+  {
+    "id": 22,
+    "name": "Özlem Özkan",
+    "email": "özlem.özkan@example.com",
+    "age": 40,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1189,
+      "max": 1491
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "Balkon",
+      "TV",
+      "Minibar",
+      "WiFi"
+    ],
+    "specialRequests": "Oda servisi",
+    "travelDates": {
+      "start": "2023-11-15",
+      "end": "2023-11-20"
+    }
+  },
+  {
+    "id": 23,
+    "name": "Merve Yalçın",
+    "email": "merve.yalçın@example.com",
+    "age": 60,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1176,
+      "max": 1484
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 3,
+    "preferredAmenities": [
+      "Minibar",
+      "Balkon",
+      "WiFi",
+      "TV"
+    ],
+    "specialRequests": "Jakuzili oda",
+    "travelDates": {
+      "start": "2023-10-20",
+      "end": "2023-10-25"
+    }
+  },
+  {
+    "id": 24,
+    "name": "Yusuf Çetin",
+    "email": "yusuf.çetin@example.com",
+    "age": 50,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1124,
+      "max": 1597
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 1,
+    "preferredAmenities": [
+      "WiFi"
+    ],
+    "specialRequests": "Sessiz bölgede",
+    "travelDates": {
+      "start": "2023-12-01",
+      "end": "2023-12-07"
+    }
+  },
+  {
+    "id": 25,
+    "name": "Fatma Yıldız",
+    "email": "fatma.yıldız@example.com",
+    "age": 34,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1362,
+      "max": 1718
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 4,
+    "preferredAmenities": [
+      "WiFi",
+      "TV",
+      "Balkon"
+    ],
+    "specialRequests": "Üst katlarda oda",
+    "travelDates": {
+      "start": "2023-12-01",
+      "end": "2023-12-07"
+    }
+  },
+  {
+    "id": 26,
+    "name": "Ramazan Özkan",
+    "email": "ramazan.özkan@example.com",
+    "age": 29,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1311,
+      "max": 1982
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 4,
+    "preferredAmenities": [
+      "WiFi",
+      "Balkon",
+      "Minibar"
+    ],
+    "specialRequests": "Kahvaltı dahil",
+    "travelDates": {
+      "start": "2023-12-01",
+      "end": "2023-12-07"
+    }
+  },
+  {
+    "id": 27,
+    "name": "Selma Alp",
+    "email": "selma.alp@example.com",
+    "age": 52,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1174,
+      "max": 1669
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "Balkon",
+      "WiFi"
+    ],
+    "specialRequests": "Jakuzili oda",
+    "travelDates": {
+      "start": "2023-12-01",
+      "end": "2023-12-07"
+    }
+  },
+  {
+    "id": 28,
+    "name": "Kemal Koç",
+    "email": "kemal.koç@example.com",
+    "age": 55,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1007,
+      "max": 1346
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "WiFi"
+    ],
+    "specialRequests": "Manzaralı oda",
+    "travelDates": {
+      "start": "2023-10-20",
+      "end": "2023-10-25"
+    }
+  },
+  {
+    "id": 29,
+    "name": "Recep Öztürk",
+    "email": "recep.öztürk@example.com",
+    "age": 32,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1335,
+      "max": 1949
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 1,
+    "preferredAmenities": [
+      "WiFi",
+      "TV",
+      "Balkon",
+      "Minibar"
+    ],
+    "specialRequests": "Geç check-out",
+    "travelDates": {
+      "start": "2023-12-10",
+      "end": "2023-12-15"
+    }
+  },
+  {
+    "id": 30,
+    "name": "Ramazan Tekin",
+    "email": "ramazan.tekin@example.com",
+    "age": 40,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1078,
+      "max": 1459
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "Balkon",
+      "TV",
+      "Minibar",
+      "WiFi"
+    ],
+    "specialRequests": "Geç check-out",
+    "travelDates": {
+      "start": "2023-11-15",
+      "end": "2023-11-20"
+    }
+  },
+  {
+    "id": 31,
+    "name": "Osman Yılmaz",
+    "email": "osman.yılmaz@example.com",
+    "age": 31,
+    "gender": "Erkek",
+    "preferredBudget": {
+      "min": 1084,
+      "max": 1713
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 3,
+    "preferredAmenities": [
+      "Balkon",
+      "TV",
+      "WiFi"
+    ],
+    "specialRequests": "Erken check-in",
+    "travelDates": {
+      "start": "2023-10-20",
+      "end": "2023-10-25"
+    }
+  },
+  {
+    "id": 32,
+    "name": "Hatice Kaya",
+    "email": "hatice.kaya@example.com",
+    "age": 54,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1211,
+      "max": 1736
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "Balkon",
+      "Minibar",
+      "WiFi"
+    ],
+    "specialRequests": "Havuz manzaralı",
+    "travelDates": {
+      "start": "2023-11-15",
+      "end": "2023-11-20"
+    }
+  },
+  {
+    "id": 33,
+    "name": "Seda Kurt",
+    "email": "seda.kurt@example.com",
+    "age": 33,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 927,
+      "max": 1589
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 3,
+    "preferredAmenities": [
+      "WiFi",
+      "TV",
+      "Balkon",
+      "Minibar"
+    ],
+    "specialRequests": "Erken check-in",
+    "travelDates": {
+      "start": "2023-11-01",
+      "end": "2023-11-05"
+    }
+  },
+  {
+    "id": 34,
+    "name": "Fatma Kara",
+    "email": "fatma.kara@example.com",
+    "age": 27,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1393,
+      "max": 1967
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 1,
+    "preferredAmenities": [
+      "WiFi",
+      "Minibar"
+    ],
+    "specialRequests": "Romantik dekorasyon",
+    "travelDates": {
+      "start": "2024-01-05",
+      "end": "2024-01-10"
+    }
+  },
+  {
+    "id": 35,
+    "name": "Merve Aydın",
+    "email": "merve.aydın@example.com",
+    "age": 33,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1147,
+      "max": 1813
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 3,
+    "preferredAmenities": [
+      "Balkon",
+      "WiFi"
+    ],
+    "specialRequests": "Üst katlarda oda",
+    "travelDates": {
+      "start": "2023-12-01",
+      "end": "2023-12-07"
+    }
+  },
+  {
+    "id": 36,
+    "name": "Ali Şimşek",
+    "email": "ali.şimşek@example.com",
+    "age": 39,
+    "gender": "Kadın",
+    "preferredBudget": {
+      "min": 1384,
+      "max": 1844
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 4,
+    "preferredAmenities": [
+      "TV"
+    ],
+    "specialRequests": "Sessiz bölgede",
+    "travelDates": {
+      "start": "2024-01-05",
+      "end": "2024-01-10"
+    }
+  },
+  {
+    "id": 1036,
+    "name": "Test Kullanıcı",
+    "email": "temp1036@example.com",
+    "age": 30,
+    "gender": "Belirtilmemiş",
+    "preferredBudget": {
+      "min": 1000,
+      "max": 1500
+    },
+    "preferredRoomType": "STANDARD",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "WiFi",
+      "TV",
+      "Minibar"
+    ],
+    "specialRequests": "",
+    "travelDates": {
+      "start": "",
+      "end": ""
+    }
+  },
+  {
+    "id": 2036,
+    "name": "Test Kullanıcı",
+    "email": "temp_2036@example.com",
+    "age": 30,
+    "gender": "UNSPECIFIED",
+    "preferredBudget": {
+      "min": 1800,
+      "max": 2500
+    },
+    "preferredRoomType": "DELUXE",
+    "requiredCapacity": 2,
+    "preferredAmenities": [
+      "WiFi",
+      "TV",
+      "Minibar"
+    ],
+    "specialRequests": "",
+    "travelDates": {
+      "start": "",
+      "end": ""
+    }
+  }
+]

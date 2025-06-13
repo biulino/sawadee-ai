@@ -1,0 +1,121 @@
+# Logs and temporary files
+*.log
+*.log.*
+logs/
+nohup.out
+
+# Development documentation (exclude from GitHub upload)
+AGENT_HANDOFF_GUIDE.md
+AI_AGENT_INTEGRATION_COMPLETE.md
+APP_NAME_UPDATE_SUMMARY.md
+AUTHENTICATION_IMPLEMENTATION.md
+FILES_CREATED_SUMMARY.md
+FINAL_IMPLEMENTATION_STATUS.md
+FINAL_INTEGRATION_STATUS.md
+HOTELINFO_IMPLEMENTATION_SUCCESS.md
+IMPLEMENTATION_COMPLETE.md
+IMPLEMENTATION_STATUS.md
+LOCAL_DEVELOPMENT_SETUP_COMPLETE.md
+MULTI_TENANT_IMPLEMENTATION.md
+integration-testing-plan.md
+monitoring-analytics-guide.md
+setup-environment.md
+
+# Test files (exclude from upload)
+test-integration.sh
+test-multi-tenant.sh
+ai-agent/test_*.py
+ai-agent/demo_*.py
+
+# Sensitive configuration files (exclude from upload)
+hotel-client.json
+client-roles.json
+hotel-realm.json
+minimal-hotel-realm.json
+
+# Build artifacts
+target/
+build/
+dist/
+node_modules/
+*.class
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Node.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+h2/
+
+# Keycloak data
+keycloak-data/
+
+# Temporary downloads
+*.tar.gz
+*.zip
+temp/
+
+# Maven
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.rar
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# AI model files (if too large)
+*.model
+*.pkl
+*.h5
+*.pb
+
+# Configuration files with secrets
+application-prod.properties
+application-secrets.properties
+docker-compose.override.yml

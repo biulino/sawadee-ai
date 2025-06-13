@@ -1,0 +1,19 @@
+{
+  "realm": "hotel-realm",
+  "enabled": true,
+  "displayName": "Hotel Management Realm",
+  "registrationAllowed": true,
+  "resetPasswordAllowed": true,
+  "rememberMe": true,
+  "verifyEmail": false,
+  "loginWithEmailAllowed": true,
+  "accessTokenLifespan": 300,
+  "ssoSessionIdleTimeout": 1800,
+  "ssoSessionMaxLifespan": 36000,
+  "clients": [],
+  "users": [],
+  "roles": {
+    "realm": [],
+    "client": {}
+  }
+}
