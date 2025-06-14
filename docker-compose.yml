@@ -45,7 +45,7 @@ services:
       - postgres
     command: start-dev
     networks:
-      - sawladee-network
+      - sawadee-network
 
   # Backend API
   backend:
